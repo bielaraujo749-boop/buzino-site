@@ -1,40 +1,143 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buzinô</title>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="suporte.html" class="btn-suporte">Suporte</a>
-            <a href="login-cadastro.html" class="btn-usuario">Usuário</a>
-            <a href="procurar-carona.html" class="btn-procurar-carona">Procurar carona</a>
-        </nav>
-    </header>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Buzinô</div>
+    <nav class="nav">
+      <a href="#suporte">Suporte</a>
+    </nav>
+    <a href="#" class="btn btn-cadastro">Cadastre-se Agora!</a>
+  </header>
 
-    <section class="explicacao-sistema">
-        <h2>Como funciona</h2>
-        <p><!-- texto explicando o sistema --></p>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Precisou.<br>Achou.</h1>
+      <a href="#" class="btn btn-entra">Entra</a>
+    </div>
+    <div class="hero-image">
+      <!-- ícone/imagem do volante -->
+      <img src="volante.svg" alt="Ícone de volante">
+    </div>
+  </section>
 
-    <section class="imagem-ilustrativa">
-        <img src="" alt="Imagem ilustrativa do sistema">
-    </section>
+  <!-- POR QUE ESCOLHER -->
+  <section class="porque">
+    <h2>Por que escolher o Buzinô ?</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="icone-economico.svg" alt="Ícone econômico">
+        <h3>ECONÔMICO</h3>
+        <p>Divida os custos e viaje pagando menos</p>
+      </div>
+      <div class="card">
+        <img src="icone-conforto.svg" alt="Ícone conforto">
+        <h3>CONFORTO</h3>
+        <p>Viagens mais tranquilas e seguras</p>
+      </div>
+      <div class="card">
+        <img src="icone-confiavel.svg" alt="Ícone confiável">
+        <h3>CONFIÁVEL</h3>
+        <p>Perfis verificados e avaliações reais</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="avaliacoes">
-        <h2>Avaliações</h2>
-        <div class="lista-avaliacoes">
-            <!-- cards/itens de avaliação -->
+  <!-- COMO FUNCIONA -->
+  <section class="como-funciona">
+    <h2>Como funciona</h2>
+    <div class="passos">
+      <div class="passo">
+        <div class="numero">1</div>
+        <h4>BUSQUE UMA CARONA</h4>
+        <p>Informe origem, destino e data da viagem</p>
+      </div>
+      <div class="passo">
+        <div class="numero">2</div>
+        <h4>ESCOLHA SUA CARONA</h4>
+        <p>Veja opções de motoristas e horários disponíveis</p>
+      </div>
+      <div class="passo">
+        <div class="numero">3</div>
+        <h4>RESERVE SEU LUGAR</h4>
+        <p>Entre em contato e confirme sua viagem</p>
+      </div>
+      <div class="passo">
+        <div class="numero">4</div>
+        <h4>APROVEITE A VIAGEM</h4>
+        <p>Viaje com segurança e chegue ao seu destino</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVALIAÇÕES -->
+  <section class="avaliacoes">
+    <div class="avaliacoes-header">
+      <h2>Avaliações de quem já viajou</h2>
+      <a href="#" class="link-mais">Mais</a>
+    </div>
+    <div class="lista-avaliacoes">
+      <div class="avaliacao">
+        <img src="avatar1.svg" alt="Foto de Anna O.">
+        <div>
+          <h5>Anna O.</h5>
+          <p>Encontrei uma carona rápida e segura. Super recomendo!</p>
         </div>
-    </section>
+      </div>
+      <div class="avaliacao">
+        <img src="avatar2.svg" alt="Foto de Breanne R.">
+        <div>
+          <h5>Breanne R.</h5>
+          <p>Consegui dividir os custos e ainda fiz boas amizades</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <!-- conteúdo do footer -->
-    </footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-col footer-sobre">
+      <h3>Buzinô</h3>
+      <p>O Buzinô conecta pessoas para viagens mais inteligentes, econômicas e sustentáveis.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#">Como funciona</a></li>
+        <li><a href="#">Para Regiões</a></li>
+        <li><a href="#">Sobre nós</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ajuda</h4>
+      <ul>
+        <li><a href="#">Central de ajuda</a></li>
+        <li><a href="#">Dicas de segurança</a></li>
+        <li><a href="#">Termos de uso</a></li>
+        <li><a href="#">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li>contato@buzino.com</li>
+        <li>(21) 00000-0000</li>
+        <li>Rio de Janeiro, RJ</li>
+      </ul>
+    </div>
+    <div class="footer-social">
+      <a href="#"><img src="icone-facebook.svg" alt="Facebook"></a>
+      <a href="#"><img src="icone-instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="icone-google.svg" alt="Google"></a>
+    </div>
+  </footer>
 
 </body>
 </html>
