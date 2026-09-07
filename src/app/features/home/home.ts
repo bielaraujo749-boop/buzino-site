@@ -1,9 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { Login } from '../login/login';
 
 @Component({
-  imports: [],
+  imports: [Login],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
 })
-export class Home {}
+export class Home {
+
+  loginAberto = signal(false);
+
+   abrirLogin(): void {
+    this.loginAberto.set(true);
+  } 
+
+  fecharLogin(): void {
+    this.loginAberto.set(false);
+  } 
+}
