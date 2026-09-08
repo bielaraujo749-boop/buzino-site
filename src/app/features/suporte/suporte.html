@@ -1,0 +1,134 @@
+<main class="pagina-suporte">
+<header class="cabecalho-suporte">
+<div class="marca">
+<span class="logo-nome">Buzinô</span>
+<span class="logo-icone" aria-hidden="true">◉</span>
+</div>
+<span class="texto-cabecalho">Suporte</span>
+</header>
+<section class="introducao">
+<p class="mini-titulo">AJUDA BUZINÔ</p>
+<h1>Suporte <span>Buzinô</span></h1>
+<p class="descricao">
+Estamos aqui para ajudar em cada etapa da sua viagem.
+Encontre uma opção abaixo ou fale diretamente com nossa equipe.
+</p>
+</section>
+<section class="secao-ajuda">
+<div class="titulo-secao">
+<h2>Como podemos ajudar?</h2>
+<p>Escolha uma opção para encontrar orientação.</p>
+</div>
+<div class="opcoes-suporte">
+<button mat-button type="button" class="opcao-suporte"
+(click)="problemasSite()">
+<span class="icone-opcao">!</span>
+<span class="conteudo-opcao">
+<strong>Problemas com o site</strong>
+<small>Ajuda com páginas e funcionamento</small>
+</span>
+</button>
+<button mat-button type="button" class="opcao-suporte"
+(click)="minhaConta()">
+<span class="icone-opcao">◎</span>
+<span class="conteudo-opcao">
+<strong>Minha conta</strong>
+<small>Acesso e informações da conta</small>
+</span>
+</button>
+<button mat-button type="button" class="opcao-suporte"
+(click)="pagamentos()">
+<span class="icone-opcao">R$</span>
+<span class="conteudo-opcao">
+<strong>Pagamentos</strong>
+<small>Dúvidas sobre pagamentos</small>
+</span>
+</button>
+<button mat-button type="button" class="opcao-suporte"
+(click)="suporteTecnico()">
+<span class="icone-opcao">⚙</span>
+<span class="conteudo-opcao">
+<strong>Suporte técnico</strong>
+<small>Erros e problemas técnicos</small>
+</span>
+</button>
+<button mat-button type="button" class="opcao-suporte outros"
+(click)="outrosAssuntos()">
+<span class="icone-opcao">•••</span>
+<span class="conteudo-opcao">
+<strong>Outros assuntos</strong>
+<small>Fale diretamente com nossa equipe</small>
+</span>
+</button>
+</div>
+<div *ngIf="mensagemOrientacao" id="mensagem-orientacao"
+class="mensagem-orientacao" role="status" aria-live="polite">
+<div class="icone-mensagem">i</div>
+<div>
+<strong>Orientação</strong>
+<p>{{ mensagemOrientacao }}</p>
+</div>
+</div>
+</section>
+<section class="secao-formulario">
+<div class="titulo-secao">
+<p class="mini-titulo">FALE CONOSCO</p>
+<h2>Fale com o suporte</h2>
+<p>Conte para nossa equipe o que aconteceu e vamos ajudar você.</p>
+</div>
+<form class="formulario-suporte" (submit)="enviarMensagem($event)">
+<div class="campo-formulario">
+<input type="text" name="nome" placeholder="Nome"
+autocomplete="name" required aria-label="Nome" />
+</div>
+<div class="campo-formulario">
+<input type="email" name="email" placeholder="E-mail"
+autocomplete="email" required aria-label="E-mail" />
+</div>
+<div class="campo-formulario campo-mensagem">
+<textarea name="mensagem" placeholder="Como podemos te ajudar?"
+rows="7" required aria-label="Como podemos te ajudar?"></textarea>
+</div>
+<button mat-button type="submit" class="botao-enviar">
+Enviar mensagem
+</button>
+</form>
+</section>
+<section class="secao-faq">
+<div class="titulo-secao">
+<p class="mini-titulo">DÚVIDAS</p>
+<h2>Perguntas frequentes</h2>
+</div>
+<div class="lista-faq">
+<details>
+<summary><span>Estou com problemas no site. O que faço?</span><b>+</b></summary>
+<p>Atualize a página e verifique sua conexão. Se o problema continuar,
+envie uma mensagem para o suporte explicando o que aconteceu.</p>
+</details>
+<details>
+<summary><span>Estou com problemas na minha conta. O que faço?</span><b>+</b></summary>
+<p>Explique no formulário qual problema está acontecendo com sua conta
+para que a equipe possa orientar você.</p>
+</details>
+<details>
+<summary><span>Meu pagamento não foi identificado. O que faço?</span><b>+</b></summary>
+<p>Confira os dados do pagamento e, caso ele continue sem ser
+identificado, entre em contato com o suporte.</p>
+</details>
+<details>
+<summary><span>Encontrei um erro no site. Como posso avisar?</span><b>+</b></summary>
+<p>Use o formulário acima e descreva o erro, o que você estava fazendo
+e o que apareceu na tela.</p>
+</details>
+<details>
+<summary><span>Como posso falar diretamente com o suporte?</span><b>+</b></summary>
+<p>Clique em "Outros assuntos" ou envie o formulário de suporte.
+A conversa será encaminhada para o WhatsApp da equipe.</p>
+</details>
+</div>
+</section>
+<footer class="rodape-suporte">
+<span class="logo-nome">Buzinô</span>
+<p>Suporte e ajuda para sua viagem.</p>
+</footer>
+</main>
