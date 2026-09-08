@@ -1,0 +1,374 @@
+<div class="dashboard">
+
+  <!-- HEADER  -->
+
+  <header class="header">
+
+    <div class="logo">
+        <h1>Buzinô</h1>
+    </div>
+
+
+    <nav class="top-menu">
+
+      <a
+        routerLink="/dashboard"
+        class="top-link">
+
+        Buscar Carona
+
+      </a>
+<br>
+      <a
+        href="#"
+        class="top-link">
+
+        Oferecer Viagem
+
+      </a>
+<br>
+      <a
+        href="#"
+        class="top-link">
+
+        Minhas Viagens
+
+      </a>
+
+    </nav>
+
+
+    <div class="header-right">
+
+      <button
+        class="notification-button"
+        type="button"
+        aria-label="Notificações">
+
+        
+
+      </button>
+
+
+      <button
+        class="header-profile"
+        type="button">
+
+        <div class="mini-avatar"></div>
+
+        <span>
+          {{ nome() }}
+        </span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ================= CONTEÚDO ================= -->
+
+  <main class="main-content">
+
+
+    <!-- MENU LATERAL -->
+
+    <aside class="sidebar">
+
+      <h2>
+        Menu
+      </h2>
+
+<br>
+      <button
+        type="button"
+        class="side-button"
+        [class.selected]="menuSelecionado() === 'Perfil'"
+        (click)="selecionarMenu('Perfil')">
+
+        Perfil
+
+      </button>
+
+<br>
+      <button
+        type="button"
+        class="side-button"
+        [class.selected]="menuSelecionado() === 'Comunidade'"
+        (click)="selecionarMenu('Comunidade')">
+
+        Comunidade
+
+      </button>
+
+<br>
+      <button
+        type="button"
+        class="side-button"
+        [class.selected]="menuSelecionado() === 'Notificação'"
+        (click)="selecionarMenu('Notificação')">
+
+        Notificação
+
+      </button>
+
+<br>
+      <button
+        type="button"
+        class="side-button"
+        [class.selected]="menuSelecionado() === 'Segurança'"
+        (click)="selecionarMenu('Segurança')">
+
+        Segurança
+
+      </button>
+
+<br>
+      <button
+        type="button"
+        class="side-button"
+        [class.selected]="menuSelecionado() === 'Suporte'"
+        (click)="selecionarMenu('Suporte')">
+
+        Suporte
+
+      </button>
+
+<br>
+      <button
+        type="button"
+        class="side-button exit"
+        (click)="sair()">
+
+        Sair
+
+      </button>
+
+    </aside>
+
+
+
+    <!--  PERFIL -->
+
+    <section class="profile-section">
+
+      @if (menuSelecionado() === 'Perfil') {
+
+        <div class="profile-card">
+
+          <div class="profile-title">
+            <h1>
+              Conta
+            </h1>
+          </div>
+
+
+          <div class="profile-content">
+
+
+            <!-- FOTO -->
+
+            <div class="photo-section">
+
+              <div class="profile-photo">
+
+                
+              </div>
+
+
+              <button
+                type="button"
+                class="photo-button">
+
+                Escolher foto
+
+              </button>
+
+            </div>
+
+
+
+            <!-- DIVISÓRIA -->
+
+            <div class="divider"></div>
+
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="information">
+
+              <div class="information-group">
+
+                <label>
+                    Nome:<span class="input-display">{{ nome() }}</span>
+                </label>
+
+                
+
+              </div>
+
+
+              <div class="information-group">
+
+                <label>
+                  E-mail: <span class="input-display">{{ email() }}</span>
+                </label>
+<br>
+                
+                <small>
+                  Gerenciado pelo Google
+                </small>
+
+              </div>
+
+<br>
+              <div class="information-group">
+
+                <label>
+                  Função: <span class="input-display">{{ funcao() }}</span>
+                </label>
+
+                
+
+              </div>
+
+
+              <div class="information-group">
+
+                <label>
+                  Idioma: <span> {{ idioma() }}</span>
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+
+      @if (menuSelecionado() !== 'Perfil') {
+
+        <div class="other-section">
+
+          <h1>
+            {{ menuSelecionado() }}
+          </h1>
+
+          <p>
+            Esta área estará disponível em breve.
+          </p>
+
+        </div>
+
+      }
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="footer">
+
+
+    <div class="footer-brand">
+
+      <h2>
+        Buzinô
+      </h2>
+
+      <p>
+        O Buzinô conecta pessoas para
+        viagens mais inteligentes, econômicas
+        e sustentáveis.
+      </p>
+
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+      <h3>
+        Navegação
+      </h3>
+
+      <a href="#">
+        Como funciona
+      </a>
+<br>
+      <a href="#">
+        Para Empresas
+      </a>
+<br>
+      <a href="#">
+        Vantagens
+      </a>
+<br>
+      <a href="#">
+        Sobre nós
+      </a>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+      <h3>
+        Ajuda
+      </h3>
+
+      <a href="#">
+        Central de ajuda
+      </a>
+<br>
+      <a href="#">
+        Dicas de segurança
+      </a>
+<br>
+      <a href="#">
+        Termos de uso
+      </a>
+<br>
+      <a href="#">
+        Política de privacidade
+      </a>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+      <h3>
+        Contato
+      </h3>
+
+      <p>
+        contato@buzino.com
+      </p>
+
+      <p>
+        (21) 99999-9999
+      </p>
+
+      <p>
+        Rio de Janeiro, RJ
+      </p>
+
+    </div>
+
+  </footer>
+
+</div>
