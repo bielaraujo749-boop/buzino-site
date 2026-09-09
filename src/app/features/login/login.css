@@ -167,9 +167,9 @@
 
   border-radius: 10px;
 
-  background: #e2d409;
+  background: #fff200;
 
-  color: #ffffff;
+  color: black;
 
   font-family: inherit;
 
@@ -199,7 +199,7 @@
 }
 
 .btn-esqueceu{
-   color: #e2d409;
+   color: #fff200;
 
   font-size: 14px;
 
@@ -245,7 +245,7 @@
 
 
 .btn-cadastro {
-  color: #e2d409;
+  color: #fff200;
 
   font-size: 14px;
 

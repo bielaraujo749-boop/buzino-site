@@ -213,9 +213,9 @@
 
   border-radius: 10px;
 
-  background: #e2d409;
+  background: #fff200;
 
-  color: #ffffff;
+  color: black;
 
   font-family: inherit;
 
@@ -248,7 +248,7 @@
 .mensagem-sucesso {
   margin: 0;
 
-  color: #555;
+  color: green;
 
   font-size: 14px;
 

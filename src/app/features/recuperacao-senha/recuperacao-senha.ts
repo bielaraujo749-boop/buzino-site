@@ -7,7 +7,6 @@ import {
 
 @Component({
   selector: 'app-recuperacao-senha',
-  standalone: true,
   imports: [
     ReactiveFormsModule
   ],

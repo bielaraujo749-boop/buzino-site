@@ -148,7 +148,7 @@
 .logo {
   margin-bottom: 15px;
 
-  color: #e2d409;
+  color: #fff200;
 
   font-size: 28px;
   font-weight: 800;
@@ -289,7 +289,7 @@
 
   flex-shrink: 0;
 
-  accent-color: #c4b708;
+  accent-color: #fff200;
 
   cursor: pointer;
 }
@@ -305,7 +305,7 @@
 
 
 .termos-texto a {
-  color: #e2d409;
+  color: #fff200;
 
   font-weight: 600;
 
@@ -338,9 +338,9 @@
 
   border-radius: 10px;
 
-  background: #e2d409;
+  background: #fff200;
 
-  color: #ffffff;
+  color: black;
 
   font-family: inherit;
 
