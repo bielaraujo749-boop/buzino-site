@@ -148,7 +148,7 @@
 .logo {
   margin-bottom: 15px;
 
-  color: #f59e0b;
+  color: #e2d409;
 
   font-size: 28px;
   font-weight: 800;
@@ -289,7 +289,7 @@
 
   flex-shrink: 0;
 
-  accent-color: #f59e0b;
+  accent-color: #c4b708;
 
   cursor: pointer;
 }
@@ -305,7 +305,7 @@
 
 
 .termos-texto a {
-  color: #d97706;
+  color: #e2d409;
 
   font-weight: 600;
 
@@ -338,7 +338,7 @@
 
   border-radius: 10px;
 
-  background: #f59e0b;
+  background: #e2d409;
 
   color: #ffffff;
 
@@ -357,7 +357,7 @@
 
 
 .btn-cadastrar:hover:not(:disabled) {
-  background: #d97706;
+  background: #c4b708;
 
   transform: translateY(-1px);
 }

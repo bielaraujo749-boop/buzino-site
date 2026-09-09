@@ -202,9 +202,9 @@
 }
 
 
-/* RECUPERAR */
+/* ENVIAR */
 
-.btn-recuperar {
+.btn-enviar {
   width: 100%;
 
   padding: 14px;
@@ -213,7 +213,7 @@
 
   border-radius: 10px;
 
-  background: #f59e0b;
+  background: #e2d409;
 
   color: #ffffff;
 
@@ -231,14 +231,14 @@
 }
 
 
-.btn-recuperar:hover:not(:disabled) {
-  background: #d97706;
+.btn-enviar:hover:not(:disabled) {
+  background: #c4b708;
 
   transform: translateY(-1px);
 }
 
 
-.btn-recuperar:disabled {
+.btn-enviar:disabled {
   background: #d6d6d6;
 
   cursor: not-allowed;
@@ -269,7 +269,7 @@
 
   background: transparent;
 
-  color: #d97706;
+  color: #e2d409;
 
   font-family: inherit;
 
