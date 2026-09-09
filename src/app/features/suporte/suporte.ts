@@ -25,14 +25,27 @@ export class SuporteComponent {
   }
 
   suporteTecnico(): void {
-    this.mensagemOrientacao ='Encontrou um erro técnico? Informe o que aconteceu para que nossa equipe possa ajudar.';
+    this.mensagemOrientacao =
+      'Encontrou um erro técnico? Informe o que aconteceu para que nossa equipe possa ajudar.';
   }
 
   outrosAssuntos(): void {
-    this.mensagemOrientacao ='Preencha o formulário abaixo para entrar em contato com nossa equipe.';
+    this.abrirWhatsapp();
   }
 
   enviarMensagem(): void {
-    this.mensagemOrientacao ='Sua mensagem foi preparada para o suporte.';
+    this.abrirWhatsapp();
   }
+
+  abrirWhatsapp(): void {
+    window.open(
+      'https://wa.me/5521981446564?text=Olá,%20preciso%20de%20ajuda%20com%20o%20Buzinô.',
+      '_blank'
+    );
+  }
+
+  voltarHome(): void {
+    window.location.href = '/';
+  }
+
 }

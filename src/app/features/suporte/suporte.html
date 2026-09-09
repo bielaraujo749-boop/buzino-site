@@ -1,15 +1,13 @@
-<p>suporte works!</p>
 <main class="pagina-suporte">
 
   <header class="cabecalho-suporte">
-    <div class="marca">
+    <div class="marca" (click)="voltarHome()">
       <span class="logo-nome">Buzinô</span>
       <span class="logo-icone">◉</span>
     </div>
 
     <span class="texto-cabecalho">Suporte</span>
   </header>
-
 
   <section class="introducao">
     <p class="mini-titulo">AJUDA BUZINÔ</p>
@@ -22,14 +20,12 @@
     </p>
   </section>
 
-
   <section class="secao-ajuda">
 
     <div class="titulo-secao">
       <h2>Encontre ajuda</h2>
       <p>Selecione o assunto que precisa de ajuda.</p>
     </div>
-
 
     <div class="opcoes-suporte">
 
@@ -46,7 +42,6 @@
         </span>
       </button>
 
-
       <button
         type="button"
         class="opcao-suporte"
@@ -59,7 +54,6 @@
           <small>Acesso e informações da conta</small>
         </span>
       </button>
-
 
       <button
         type="button"
@@ -74,7 +68,6 @@
         </span>
       </button>
 
-
       <button
         type="button"
         class="opcao-suporte"
@@ -88,22 +81,20 @@
         </span>
       </button>
 
-
       <button
         type="button"
         class="opcao-suporte"
-        (click)="outrosAssuntos()"
+        (click)="abrirWhatsapp()"
       >
         <span class="icone-opcao">•••</span>
 
         <span class="conteudo-opcao">
           <strong>Outros assuntos</strong>
-          <small>Fale diretamente com nossa equipe</small>
+          <small>Fale diretamente com nossa equipe pelo WhatsApp.</small>
         </span>
       </button>
 
     </div>
-
 
     @if (mensagemOrientacao) {
       <div class="mensagem-orientacao">
@@ -120,7 +111,6 @@
 
   </section>
 
-
   <section class="secao-formulario">
 
     <div class="titulo-secao">
@@ -133,7 +123,6 @@
       </p>
     </div>
 
-
     <div class="formulario-suporte">
 
       <div class="campo-formulario">
@@ -143,14 +132,12 @@
         />
       </div>
 
-
       <div class="campo-formulario">
         <input
           type="email"
           placeholder="E-mail"
         />
       </div>
-
 
       <div class="campo-formulario campo-mensagem">
         <textarea
@@ -159,11 +146,10 @@
         ></textarea>
       </div>
 
-
       <button
         type="button"
         class="botao-enviar"
-        (click)="enviarMensagem()"
+        (click)="abrirWhatsapp()"
       >
         Enviar mensagem
       </button>
@@ -171,7 +157,6 @@
     </div>
 
   </section>
-
 
   <section class="secao-faq">
 
@@ -181,69 +166,60 @@
       <h2>Perguntas frequentes</h2>
     </div>
 
-
     <div class="lista-faq">
 
       <details>
         <summary>
-          <span>Estou com problemas no site. O que faço?</span>
+          <span>Estou enfrentando problemas ao utilizar o site. O que devo fazer?</span>
           <b>+</b>
         </summary>
 
         <p>
-          Atualize a página e verifique sua conexão.
-          Se o problema continuar, envie uma mensagem para o suporte.
+          Atualize a página, limpe o cache do navegador e verifique sua conexão com a internet. Caso o problema continue ocorrendo, entre em contato com nossa equipe de suporte informando o erro encontrado.
         </p>
       </details>
 
-
       <details>
         <summary>
-          <span>Estou com problemas na minha conta. O que faço?</span>
+          <span>Estou com dificuldades para acessar minha conta. Como resolver?</span>
           <b>+</b>
         </summary>
 
         <p>
-          Verifique seus dados de acesso e, se o problema continuar,
-          entre em contato com nossa equipe.
+          Verifique se o e-mail e a senha informados estão corretos. Caso não consiga acessar sua conta ou recuperar seus dados, nossa equipe poderá auxiliar no processo de verificação.
         </p>
       </details>
 
-
       <details>
         <summary>
-          <span>Estou com problemas com minha carona. O que faço?</span>
+          <span>Estou enfrentando problemas relacionados à minha carona. O que devo fazer?</span>
           <b>+</b>
         </summary>
 
         <p>
-          Confira as informações da sua carona e, se precisar de ajuda,
-          entre em contato com o suporte.
+           Confira as informações da viagem, horário e local de embarque. Se identificar alguma inconsistência ou precisar de suporte adicional, entre em contato com nossa equipe.
         </p>
       </details>
 
-
       <details>
         <summary>
-          <span>Encontrei um erro no site. Como posso avisar?</span>
+          <span>Identifiquei um erro ou comportamento inesperado no sistema. Como posso informar a equipe?</span>
           <b>+</b>
         </summary>
 
         <p>
-          Use o formulário e descreva o erro que apareceu na tela.
+         Utilize o formulário de contato ou o WhatsApp para informar o erro encontrado. Se possível, descreva o que aconteceu e em qual página o problema ocorreu para agilizar o atendimento.
         </p>
       </details>
 
-
       <details>
         <summary>
-          <span>Como posso falar diretamente com o suporte?</span>
+          <span>Como posso entrar em contato diretamente com a equipe de suporte?</span>
           <b>+</b>
         </summary>
 
         <p>
-          Preencha o formulário acima para entrar em contato
-          com nossa equipe.
+        Você pode entrar em contato pelo formulário disponível nesta página ou diretamente pelo WhatsApp. Nossa equipe está preparada para esclarecer dúvidas e oferecer suporte quando necessário.
         </p>
       </details>
 
@@ -251,6 +227,15 @@
 
   </section>
 
+  <section class="secao-voltar">
+    <button
+      type="button"
+      class="botao-voltar"
+      (click)="voltarHome()"
+    >
+      ← Voltar para página inicial
+    </button>
+  </section>
 
   <footer class="rodape-suporte">
     <span class="logo-nome">Buzinô</span>
