@@ -7,41 +7,7 @@ html, body {
   display: block;
   min-height: 100vh;
 }
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background-color: #fff200;
-}
 
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.logo {
-    font-size: 32px;
-    font-weight: 800;
-    color: #111111;
-}
-.nav a {
-    text-decoration: none;
-    color:#111111;
-    font-weight: 500;
-    margin-right: 20px;
-}
-
-.btn-cadastro {
-    background-color: #111111;
-    color: #f7f6f3;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-size: 14px;
-}
 
 .hero {
     background-color: #fff200;
@@ -93,21 +59,6 @@ html, body {
     height: 380px;
     margin-right: 150px;
     margin-top: -130px;
-}
-
-.avatar {
-  width: 44px;
-  height: 44px;
-  background-color: #111111;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatar img {
-  width: 22px;
-  height: 22px;
 }
 
 .porque {
