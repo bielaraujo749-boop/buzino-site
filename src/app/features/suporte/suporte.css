@@ -1,0 +1,345 @@
+.pagina-suporte {
+  min-height: 100vh;
+  background: #f5f5f5;
+  color: #111;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+
+.cabecalho-suporte {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 8%;
+  background: #111;
+  color: #fff;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-nome {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffd600;
+}
+
+.logo-icone {
+  color: #ffd600;
+  font-size: 22px;
+}
+
+.texto-cabecalho {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* INTRODUÇÃO */
+
+.introducao {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 70px 8% 40px;
+  text-align: center;
+}
+
+.mini-titulo {
+  margin: 0 0 10px;
+  color: #111;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.introducao h1 {
+  margin: 0 0 18px;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.introducao h1 span {
+  color: #ffd600;
+}
+
+.descricao {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* SEÇÕES */
+
+.secao-ajuda,
+.secao-formulario,
+.secao-faq {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 8%;
+}
+
+.titulo-secao {
+  margin-bottom: 25px;
+}
+
+.titulo-secao h2 {
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.titulo-secao p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+/* OPÇÕES DE SUPORTE */
+
+.opcoes-suporte {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.opcao-suporte {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-left: 5px solid #ffd600;
+  border-radius: 12px;
+  background: #fff;
+  color: #111;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.opcao-suporte:hover {
+  background: #fff8cc;
+  transform: translateY(-2px);
+}
+
+.icone-opcao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #ffd600;
+  color: #111;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.conteudo-opcao {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.conteudo-opcao strong {
+  font-size: 16px;
+}
+
+.conteudo-opcao small {
+  color: #666;
+  font-size: 13px;
+}
+
+
+/* MENSAGEM DE ORIENTAÇÃO */
+
+.mensagem-orientacao {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 25px;
+  padding: 20px;
+  border-left: 5px solid #ffd600;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+}
+
+.mensagem-orientacao strong {
+  color: #ffd600;
+}
+
+.mensagem-orientacao p {
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+.icone-mensagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffd600;
+  color: #111;
+  font-weight: 800;
+}
+
+
+/* FORMULÁRIO */
+
+.formulario-suporte {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+  border-radius: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+  border-color: #ffd600;
+}
+
+.campo-mensagem textarea {
+  resize: vertical;
+}
+
+.botao-enviar {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #ffd600;
+  color: #111;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao-enviar:hover {
+  background: #e6c000;
+}
+
+
+/* FAQ */
+
+.lista-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-faq details {
+  padding: 18px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.lista-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.lista-faq summary b {
+  color: #111;
+  font-size: 22px;
+}
+
+.lista-faq details p {
+  margin: 15px 0 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+/* RODAPÉ */
+
+.rodape-suporte {
+  margin-top: 40px;
+  padding: 35px 8%;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.rodape-suporte .logo-nome {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.rodape-suporte p {
+  margin: 0;
+  color: #ccc;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+  .cabecalho-suporte {
+    padding: 18px 6%;
+  }
+
+  .introducao {
+    padding: 50px 6% 30px;
+  }
+
+  .introducao h1 {
+    font-size: 36px;
+  }
+
+  .descricao {
+    font-size: 15px;
+  }
+
+  .secao-ajuda,
+  .secao-formulario,
+  .secao-faq {
+    padding: 30px 6%;
+  }
+
+  .opcoes-suporte {
+    grid-template-columns: 1fr;
+  }
+
+  .titulo-secao h2 {
+    font-size: 25px;
+  }
+
+  .formulario-suporte {
+    padding: 20px;
+  }
+
+}
