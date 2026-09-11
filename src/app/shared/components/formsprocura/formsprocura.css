@@ -1,0 +1,104 @@
+/* Container Principal (reutilizando padrão da .cardcaronas) */
+.formsprocura {
+  border: 1px solid #f2e3a1;
+  border-radius: 16px;
+  padding: 16px 20px;
+  background-color: #fffdf5; /* Fundo amarelado suave */
+  box-shadow: 0 4px 12px rgba(230, 180, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  transition: all 0.3s ease;
+}
+
+/* Cabeçalho do formulário */
+.form-header h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.1rem;
+  color: #37474f;
+  font-weight: 600;
+  border-bottom: 1px solid #f7edc6;
+  padding-bottom: 8px;
+}
+
+/* Layout em Grid para os campos lado a lado */
+.form-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-group .label {
+  font-size: 0.85rem;
+  color: #8d6e63;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* Inputs estilizados conforme a paleta */
+.input-carona {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #f2e3a1;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  color: #37474f;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-carona::placeholder {
+  color: #9e9e9e;
+}
+
+.input-carona:focus {
+  border-color: #fbc02d;
+  box-shadow: 0 0 0 3px rgba(251, 192, 45, 0.2);
+}
+
+/* Botão de Busca (reutilizando padrão do .btn-reservar) */
+.btn-procurar {
+  width: 100%;
+  background-color: #fff200;
+  color: #000000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+}
+
+.btn-procurar:hover:not(:disabled) {
+  background-color: #fdd835;
+  transform: translateY(-1px);
+}
+
+.btn-procurar:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Estado desabilitado (integração nativa com Angular Reactive Forms) */
+.btn-procurar:disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Ajuste de responsividade para telas menores */
+@media (max-width: 600px) {
+  .form-body {
+    grid-template-columns: 1fr;
+  }
+}

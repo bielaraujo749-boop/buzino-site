@@ -1,0 +1,253 @@
+/* Configurações gerais */
+* {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Estilo base */
+.cardcaronas {
+  border: 1px solid #f2e3a1;
+  border-radius: 16px;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  background-color: #fffdf5; /* Fundo com leve tom amarelado/creme */
+  box-shadow: 0 4px 12px rgba(230, 180, 0, 0.08);
+  transition: all 0.3s ease;
+  max-width: 840px;
+  margin: 0 auto 16px auto;
+}
+
+/* Borda e destaque em amarelo para quando estiver confirmada */
+.cardcaronas.status-confirmada {
+  border-color: #fbc02d;
+  box-shadow: 0 4px 16px rgba(251, 192, 45, 0.25);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  border-bottom: 1px solid #f7edc6;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.card li:last-child {
+  margin-left: auto;
+}
+
+/* Estilização do badge de status em tons de amarelo */
+.status-container {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: #fff8e1;
+  color: #f57f17;
+  border: 1px solid #ffe082;
+}
+
+.badge-verde {
+  background-color: #b9ff9d;
+  color: #5d4037;
+  border-color: #5dfb2d;
+}
+
+.badge-azul {
+  background-color: #9dacff; 
+  color: #5d4037;
+  border-color: #2d5dfb;
+}
+
+/* Ajustes dos itens da lista (.card li) */
+.card li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #37474f;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #616161;
+}
+
+/* Seção de Detalhes */
+.detalhes {
+  margin: 8px 0 16px 0;
+  color: #424242;
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.9rem;
+}
+
+.detalhes p {
+  margin: 0 0 4px 0;
+  color: #8d6e63;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detalhes strong {
+  display: block;
+  color: #37474f;
+  font-weight: 600;
+}
+
+/* Botão de Reserva */
+.btn-reservar {
+  width: 100%;
+  background-color: #fff200;
+  color: #000000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-reservar:hover {
+  background-color: #fdd835;
+  transform: translateY(-1px);
+}
+
+.btn-reservar:active {
+  transform: translateY(0);
+}
+ Tag de Status
+.status-container {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px stroke #eee;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  background-color: #eee;
+  color: #555;
+}
+
+.badge-verde {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badge-vermelho {
+  background-color: #ffebee;
+  color: #c62828;            
+  border-color: #ffcdd2;     
+}
+
+.badge-azul {
+  background-color: #e8f5e9;
+  color: #00aaff;
+}
+
+/* Fundo escuro semitransparente que cobre a tela inteira */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px); /* Efeito de desfoque no fundo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Caixa do Pop-up */
+.modal-conteudo {
+  background-color: #fffdf5; /* Mesmo tom creme suave do card */
+  border: 1px solid #f2e3a1;
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: surgimento 0.2s ease-out;
+}
+
+/* Ícone de sucesso */
+.modal-icone {
+  width: 48px;
+  height: 48px;
+  background-color: #b9ff9d;
+  color: #1b5e20;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 16px auto;
+}
+
+.modal-conteudo h3 {
+  margin: 0 0 8px 0;
+  color: #37474f;
+  font-size: 1.2rem;
+}
+
+.modal-conteudo p {
+  margin: 0 0 20px 0;
+  color: #616161;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Botão de Fechar */
+.btn-fechar {
+  width: 100%;
+  background-color: #fff200;
+  color: #000000;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-fechar:hover {
+  background-color: #fdd835;
+}
+
+/* Animação suave para o pop-up */
+@keyframes surgimento {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

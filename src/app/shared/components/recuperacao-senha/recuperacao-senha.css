@@ -1,0 +1,309 @@
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
+.recuperacao-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 420px;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.25);
+
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* BOTÃO FECHAR */
+
+.btn-fechar {
+  position: absolute;
+
+  top: 14px;
+  right: 16px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #777;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.btn-fechar:hover {
+  background: #f3f3f3;
+
+  color: #222;
+}
+
+
+.btn-fechar:focus-visible {
+  outline: 2px solid #f59e0b;
+
+  outline-offset: 2px;
+}
+
+
+/* HEADER */
+
+.recuperacao-header {
+  margin-bottom: 28px;
+
+  text-align: center;
+}
+
+
+.recuperacao-header h2 {
+  margin: 0 0 12px;
+
+  color: #222;
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+
+.recuperacao-header p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* FORM */
+
+.recuperacao-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.form-group label {
+  color: #333;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+.form-group input {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5d5d5;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  color: #222;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.form-group input:focus {
+  border-color: #f59e0b;
+
+  box-shadow:
+    0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+
+.form-group input.ng-invalid.ng-touched {
+  border-color: #dc2626;
+}
+
+
+/* ERRO */
+
+.erro {
+  color: #dc2626;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* ENVIAR */
+
+.btn-enviar {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #fff200;
+
+  color: black;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.btn-enviar:hover:not(:disabled) {
+  background: #c4b708;
+
+  transform: translateY(-1px);
+}
+
+
+.btn-enviar:disabled {
+  background: #d6d6d6;
+
+  cursor: not-allowed;
+}
+
+
+.mensagem-sucesso {
+  margin: 0;
+
+  color: green;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* VOLTAR */
+
+.btn-voltar {
+  width: 100%;
+
+  margin-top: 18px;
+
+  padding: 10px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #e2d409;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.btn-voltar:hover {
+  text-decoration: underline;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 480px) {
+
+  .modal-overlay {
+    padding: 15px;
+  }
+
+
+  .recuperacao-card {
+    padding: 32px 22px;
+
+    border-radius: 16px;
+  }
+
+
+  .recuperacao-header h2 {
+    font-size: 24px;
+  }
+
+}

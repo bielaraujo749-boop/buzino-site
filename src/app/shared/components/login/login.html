@@ -1,0 +1,125 @@
+<div class="login-overlay" (click)="fecharLogin()">
+
+  <div
+    class="login-modal"
+    (click)="$event.stopPropagation()"
+  >
+
+    <button
+      type="button"
+      class="btn-fechar"
+      aria-label="Fechar login"
+      (click)="fecharLogin()"
+    >
+      &times;
+    </button>
+
+    <div class="login-header">
+      <h2>Login</h2>
+      <p>Entre para encontrar sua próxima carona.</p>
+    </div>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="logar()"
+      class="login-form"
+    >
+
+      <!-- E-MAIL -->
+      <div class="form-group">
+
+        <label for="email">
+          E-mail
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Digite seu e-mail"
+          autocomplete="email"
+        >
+
+        @if (email.touched && email.hasError('required')) {
+          <span class="erro">
+            O e-mail é obrigatório.
+          </span>
+        }
+
+        @if (email.touched && email.hasError('email')) {
+          <span class="erro">
+            Digite um e-mail válido.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- SENHA -->
+      <div class="form-group">
+
+        <label for="senha">
+          Senha
+        </label>
+
+        <input
+          id="senha"
+          type="password"
+          formControlName="senha"
+          placeholder="Digite sua senha"
+          autocomplete="current-password"
+        >
+
+        @if (senha.touched && senha.hasError('required')) {
+          <span class="erro">
+            A senha é obrigatória.
+          </span>
+        }
+
+      </div>
+      
+     
+        <button
+        type="button"
+        class="btn-esqueceu" (click)="abrirRecuperacao()">
+  Esqueceu sua senha?
+    </button>
+      
+
+      <!-- BOTÃO LOGIN -->
+      <button
+        type="submit"
+        class="btn-logar"
+        [disabled]="loginForm.invalid"
+      >
+        Logar
+      </button>
+
+    </form>
+
+
+    <!-- CADASTRO -->
+    <div class="cadastro-container">
+
+      <p>Ainda não possui uma conta?</p>
+
+      <a
+        routerLink="/cadastro"
+        class="btn-cadastro"
+      >
+        Cadastre-se
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+@if (recuperacaoAberta) {
+
+  <app-recuperacao-senha
+    (fechar)="fecharRecuperacao()"
+  />
+
+}
