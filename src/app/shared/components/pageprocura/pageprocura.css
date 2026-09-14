@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #ffffff; /* Fundo todo branco */
+}
+
+.container-busca {
+  max-width: 860px; /* Um pouco maior que os cards (800px) para criar um respiro interno */
+  margin: 0 auto;
+  padding: 40px 32px;
+  min-height: 100vh;
+
+  /* Desenha 2 linhas verticais sutis nas extremidades esquerda e direita do container */
+  background-image: 
+    linear-gradient(to bottom, #e0e0e0, #e0e0e0), /* Linha Esquerda */
+    linear-gradient(to bottom, #e0e0e0, #e0e0e0); /* Linha Direita */
+  
+  background-size: 1px 100%; /* Largura da linha (1px) e altura (100%) */
+  background-position: left center, right center; /* Posiciona uma em cada ponta */
+  background-repeat: no-repeat;
+}
+
+/* Título minimalista e centralizado */
+.container-busca h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #37474f;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 32px;
+  letter-spacing: -0.3px;
+}
+
+/* Mensagem de estado vazio estilizada */
+.resultados p {
+  text-align: center;
+  color: #8d6e63;
+  margin-top: 32px;
+  font-size: 0.95rem;
+}
+
+/* Responsividade: reduz o padding em dispositivos móveis */
+@media (max-width: 600px) {
+  .container-busca {
+    padding: 24px 16px;
+    background-image: none; /* Oculta as linhas em telas pequenas para economizar espaço */
+  }
+}

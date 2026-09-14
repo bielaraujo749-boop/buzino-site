@@ -1,0 +1,285 @@
+<div class="cadastro-page">
+
+  <div class="cadastro-card">
+    <button
+    type="button"
+    class="btn-fechar"
+    aria-label="Fechar cadastro"
+    title="Voltar para a página inicial"
+    (click)="fecharCadastro()"
+  >
+    &times;
+  </button>
+  
+    <div class="cadastro-header">
+
+      <div class="logo">
+        Buzinô
+      </div>
+
+      <h1>Crie sua conta</h1>
+
+      <p>
+        Cadastre-se para encontrar sua próxima carona.
+      </p>
+
+    </div>
+
+
+    <form
+      [formGroup]="cadastroForm"
+      (ngSubmit)="criarConta()"
+      class="cadastro-form"
+    >
+
+
+      <!-- NOME COMPLETO -->
+
+      <div class="form-group">
+
+        <label for="nomeCompleto">
+          Nome completo
+        </label>
+
+        <input
+          id="nomeCompleto"
+          type="text"
+          formControlName="nomeCompleto"
+          placeholder="Digite seu nome completo"
+          autocomplete="name"
+        >
+
+        @if (
+          nomeCompleto.touched &&
+          nomeCompleto.hasError('required')
+        ) {
+          <span class="erro">
+            O nome completo é obrigatório.
+          </span>
+        }
+
+        @if (
+          nomeCompleto.touched &&
+          nomeCompleto.hasError('minlength')
+        ) {
+          <span class="erro">
+            Digite pelo menos 3 caracteres.
+          </span>
+        }
+         @if (
+          nomeCompleto.touched &&
+          nomeCompleto.hasError('maxlength')
+        ) {
+          <span class="erro">
+            Digite no máximo 50 caracteres.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- IDADE -->
+
+      <div class="form-group">
+
+        <label for="idade">
+          Idade
+        </label>
+
+        <input
+          id="idade"
+          type="number"
+          formControlName="idade"
+          placeholder="Digite sua idade"
+          min="18"
+          max="120"
+          inputmode="numeric"
+        >
+
+        @if (
+          idade.touched &&
+          idade.hasError('required')
+        ) {
+          <span class="erro">
+            A idade é obrigatória.
+          </span>
+        }
+
+        @if (
+          idade.touched &&
+          idade.hasError('min')
+        ) {
+          <span class="erro">
+            Você precisa ter 18 anos ou mais para se cadastrar.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- EMAIL -->
+
+      <div class="form-group">
+
+        <label for="email">
+          E-mail
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="Digite seu e-mail"
+          autocomplete="email"
+        >
+
+        @if (
+          email.touched &&
+          email.hasError('required')
+        ) {
+          <span class="erro">
+            O e-mail é obrigatório.
+          </span>
+        }
+
+        @if (
+          email.touched &&
+          email.hasError('email')
+        ) {
+          <span class="erro">
+            Digite um e-mail válido.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- SENHA -->
+
+      <div class="form-group">
+
+        <label for="senha">
+          Senha
+        </label>
+
+        <input
+          id="senha"
+          type="password"
+          formControlName="senha"
+          placeholder="Crie uma senha"
+          autocomplete="new-password"
+        >
+
+        @if (
+          senha.touched &&
+          senha.hasError('required')
+        ) {
+          <span class="erro">
+            A senha é obrigatória.
+          </span>
+        }
+
+        @if (
+          senha.touched &&
+          senha.hasError('minlength')
+        ) {
+          <span class="erro">
+            A senha deve ter pelo menos 6 caracteres.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- CONFIRMAÇÃO DE SENHA -->
+
+      <div class="form-group">
+
+        <label for="confirmarSenha">
+          Confirmar senha
+        </label>
+
+        <input
+          id="confirmarSenha"
+          type="password"
+          formControlName="confirmarSenha"
+          placeholder="Digite a senha novamente"
+          autocomplete="new-password"
+        >
+
+        @if (
+          confirmarSenha.touched &&
+          confirmarSenha.hasError('required')
+        ) {
+          <span class="erro">
+            A confirmação da senha é obrigatória.
+          </span>
+        }
+
+        @if (
+          confirmarSenha.touched &&
+          cadastroForm.hasError('senhasDiferentes')
+        ) {
+          <span class="erro">
+            As senhas não coincidem.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- TERMOS -->
+
+      <div class="termos-group">
+
+        <label class="checkbox-container">
+
+          <input
+            type="checkbox"
+            formControlName="termos"
+          >
+
+          <span class="checkmark"></span>
+
+          <span class="termos-texto">
+            Eu concordo com os
+            <a href="#" (click)="$event.preventDefault()">
+              Termos de Uso
+            </a>
+            e a
+            <a href="#" (click)="$event.preventDefault()">
+              Política de Privacidade
+            </a>
+            do Buzinô.
+          </span>
+
+        </label>
+
+
+        @if (
+          termos.touched &&
+          termos.hasError('required')
+        ) {
+          <span class="erro">
+            Você precisa aceitar os termos para continuar.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- CRIAR CONTA -->
+
+      <button
+        type="submit"
+        class="btn-cadastrar"
+        [disabled]="cadastroForm.invalid"
+      >
+        Criar conta
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

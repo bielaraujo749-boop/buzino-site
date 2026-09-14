@@ -1,0 +1,85 @@
+<section
+  class="cardcaronas"
+  [class.status-confirmada]="modoVisualizacao && opcoes.confirmacao === 'Confirmada'"
+>
+  @if (modoVisualizacao) {
+    <div class="status-container">
+      <span
+        class="badge"
+        [class.badge-verde]="opcoes.confirmacao === 'Confirmada'"
+        [class.badge-vermelho]="opcoes.confirmacao === 'Recusada'"
+      >
+        {{ opcoes.confirmacao }}
+      </span>
+    </div>
+  }
+
+  <ul class="card">
+    <!-- Data e Horário -->
+    <li class="coluna-tempo">
+      <h3>{{ opcoes.data }}</h3>
+      <h3>{{ opcoes.horariop }}</h3>
+    </li>
+
+    <!-- Origem e Destino -->
+    <li class="coluna-rota">
+      <div class="ponto-rota">
+        <span class="cidade">Origem</span>
+        <h3>{{ opcoes.partida }}</h3>
+      </div>
+      <div class="ponto-rota">
+        <span class="cidade">Destino</span>
+        <h3>{{ opcoes.chegada }}</h3>
+      </div>
+    </li>
+
+    <!-- Informações Adicionais -->
+    <li class="coluna-info">
+      <div class="info-item">
+        <span class="label">Motorista</span>
+        <p>{{ opcoes.nome }}</p>
+      </div>
+      <div class="info-item">
+        <span class="label">Modelo</span>
+        <p>{{ opcoes.carro }}</p>
+      </div>
+      <div class="info-item">
+        <span class="label">Placa</span>
+        <p class="reserva-codigo">{{ opcoes.placa }}</p>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="detalhes">
+    <li>
+      <p>Mais detalhes</p>
+      <strong>{{ opcoes.duracao }} min de viagem</strong>
+      <br />
+      <strong>Chegada às {{ opcoes.horariop | horarioc: opcoes.duracao }}</strong>
+      <br />
+      <div class="status-container">
+        <span class="badge" [class.badge-azul]="opcoes.climatizacao === 'Ar-condicionado'">
+          {{ opcoes.climatizacao }}
+        </span>
+      </div>
+    </li>
+  </ul>
+
+  @if (!modoVisualizacao) {
+    <button class="btn-reservar" (click)="onReservar()">Reservar</button>
+  }
+</section>
+
+@if (exibirModalSucesso) {
+  <div class="modal-backdrop" (click)="fecharModal()">
+    <div class="modal-conteudo" (click)="$event.stopPropagation()">
+      <div class="modal-icone">✓</div>
+      <h3>Reserva Efetuada!</h3>
+      <p>
+        Sua solicitação para a carona de <strong>{{ opcoes.partida }}</strong> para 
+        <strong>{{ opcoes.chegada }}</strong> foi enviada com sucesso ao motorista.
+      </p>
+      <button class="btn-fechar" (click)="fecharModal()">Entendido</button>
+    </div>
+  </div>
+}

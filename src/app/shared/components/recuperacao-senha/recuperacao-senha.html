@@ -1,0 +1,131 @@
+<div class="modal-overlay">
+
+  <div class="recuperacao-card">
+
+
+    <!-- BOTÃO X -->
+
+    <button
+      type="button"
+      class="btn-fechar"
+      aria-label="Fechar recuperação de senha"
+      title="Voltar para o login"
+      (click)="voltarParaLogin()"
+    >
+      &times;
+    </button>
+
+
+    <!-- TÍTULO -->
+
+    <div class="recuperacao-header">
+
+      <h2>
+        Recupere sua senha
+      </h2>
+
+
+      <!-- ESTADO INICIAL -->
+
+      @if (!recuperacaoEnviada) {
+
+        <p>
+          Insira seu e-mail cadastrado.
+        </p>
+
+      }
+
+
+      <!-- ESTADO APÓS ENVIO -->
+
+      @if (recuperacaoEnviada) {
+
+        <p class="mensagem-sucesso">
+          O e-mail para recuperação de senha foi enviado.
+          Confira sua caixa de entrada para continuar.
+        </p>
+
+      }
+
+    </div>
+
+
+    <!-- FORMULÁRIO -->
+
+    @if (!recuperacaoEnviada) {
+
+      <form
+        [formGroup]="recuperacaoForm"
+        (ngSubmit)="enviarRecuperacao()"
+        class="recuperacao-form"
+      >
+
+        <div class="form-group">
+
+          <label for="emailRecuperacao">
+            E-mail
+          </label>
+
+
+          <input
+            id="emailRecuperacao"
+            type="email"
+            formControlName="email"
+            placeholder="Digite seu e-mail"
+            autocomplete="email"
+          />
+
+
+          @if (
+            email.touched &&
+            email.hasError('required')
+          ) {
+
+            <span class="erro">
+              O e-mail é obrigatório.
+            </span>
+
+          }
+
+
+          @if (
+            email.touched &&
+            email.hasError('email')
+          ) {
+
+            <span class="erro">
+              Digite um e-mail válido.
+            </span>
+
+          }
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn-enviar"
+          [disabled]="recuperacaoForm.invalid"
+        >
+          Enviar
+        </button>
+
+      </form>
+
+    }
+
+
+    <!-- VOLTAR PARA LOGIN -->
+
+    <button
+      type="button"
+      class="btn-voltar"
+      (click)="voltarParaLogin()"
+    >
+      Voltar para login
+    </button>
+
+
+  </div>
+
+</div>

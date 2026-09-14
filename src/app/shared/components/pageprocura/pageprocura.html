@@ -1,0 +1,17 @@
+<main class="container-busca">
+
+    <app-formsprocura (buscar)="onBuscar($event)"></app-formsprocura>
+
+    <div class="resultados">
+        @for (item of caronasEncontradas; track item.id) {
+            <app-cardcaronas
+              [opcoes]="item"
+              (reservar)="onReservar($event)">
+              </app-cardcaronas>
+        } @empty {
+            @if (buscaRealizada) {
+                <p>Nenhuma carona encontrada para esse trajeto.</p>
+            }
+        }
+    </div>
+</main>

@@ -1,0 +1,965 @@
+/* =========================================================
+   BUZINÔ — PÁGINA DE SUPORTE
+   Estilo baseado no protótipo do Figma
+   ========================================================= */
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+.pagina-suporte {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111111;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.pagina-suporte *,
+.pagina-suporte *::before,
+.pagina-suporte *::after {
+  box-sizing: border-box;
+}
+
+
+
+/* =========================================================
+   INTRODUÇÃO
+   ========================================================= */
+
+.introducao {
+  width: 100%;
+  max-width: 1350px;
+
+  margin: 0 auto;
+
+  padding: 25px 5% 20px;
+
+  text-align: left;
+}
+
+
+/* Pequeno título */
+
+.mini-titulo {
+  margin: 0 0 5px;
+
+  color: #111111;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+
+/* Título principal */
+
+.introducao h1 {
+  margin: 0 0 4px;
+
+  font-size: clamp(38px, 4vw, 54px);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -1.5px;
+}
+
+.introducao h1 span {
+  color: #fff000;
+}
+
+
+/* Descrição */
+
+.descricao {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #222222;
+
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SEÇÕES
+   ========================================================= */
+
+.secao-ajuda,
+.secao-formulario,
+.secao-faq {
+  width: 100%;
+  max-width: 1350px;
+
+  margin: 0 auto;
+
+  padding: 20px 5%;
+}
+
+
+/* Títulos das seções */
+
+.titulo-secao {
+  margin-bottom: 22px;
+}
+
+.titulo-secao h2 {
+  margin: 0 0 7px;
+
+  font-size: 30px;
+  font-weight: 500;
+
+  color: #111111;
+}
+
+.titulo-secao p {
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   OPÇÕES DE SUPORTE
+   ========================================================= */
+
+.opcoes-suporte {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 35px;
+
+  width: 100%;
+}
+
+
+/* Cards */
+
+.opcao-suporte {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  width: 100%;
+  min-height: 150px;
+
+  padding: 25px;
+
+  border: 1px solid #d0d0d0;
+  border-radius: 40px;
+
+  background: #dddddd;
+
+  color: #111111;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* Efeito moderno e discreto */
+
+.opcao-suporte:hover {
+  transform: translateY(-5px);
+
+  background: #e2e2e2;
+
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.13);
+}
+
+
+/* Clique */
+
+.opcao-suporte:active {
+  transform: translateY(-1px);
+}
+
+
+/* Ícone */
+
+.icone-opcao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: #fff000;
+
+  color: #111111;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  transition: transform 0.25s ease;
+}
+
+.opcao-suporte:hover .icone-opcao {
+  transform: scale(1.05);
+}
+
+
+/* Conteúdo */
+
+.conteudo-opcao {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  padding-top: 2px;
+}
+
+.conteudo-opcao strong {
+  color: #111111;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  line-height: 1.2;
+}
+
+.conteudo-opcao small {
+  color: #666666;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   MENSAGEM "OUTROS ASSUNTOS"
+   ========================================================= */
+
+.mensagem-orientacao {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  width: 82%;
+
+  margin: 28px auto 0;
+
+  padding: 15px 22px;
+
+  border: 1px solid #111111;
+  border-radius: 45px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.mensagem-orientacao:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.09);
+}
+
+
+/* Ícone da mensagem */
+
+.icone-mensagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  min-width: 52px;
+  width: 52px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: #fff000;
+
+  color: #111111;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.mensagem-orientacao strong {
+  display: block;
+
+  color: #111111;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.mensagem-orientacao p {
+  margin: 4px 0 0;
+
+  color: #666666;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.secao-formulario {
+  padding-top: 35px;
+}
+
+
+.formulario-suporte {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  width: 100%;
+
+  padding: 28px;
+
+  border: 1px solid #d0d0d0;
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+
+/* Campos */
+
+.campo-formulario input,
+.campo-formulario textarea {
+  display: block;
+
+  width: 100%;
+
+  padding: 15px 17px;
+
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  font-family: inherit;
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Placeholder */
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+  color: #999999;
+}
+
+
+/* Foco */
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+  border-color: #111111;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 240, 0, 0.45);
+}
+
+
+/* Mensagem */
+
+.campo-mensagem textarea {
+  min-height: 150px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+
+/* Botão */
+
+.botao-enviar {
+  align-self: flex-start;
+
+  padding: 14px 30px;
+
+  border: 1px solid #111111;
+  border-radius: 10px;
+
+  background: #fff000;
+
+  color: #111111;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.botao-enviar:hover {
+  transform: translateY(-2px);
+
+  background: #ffe600;
+
+  box-shadow:
+    0 7px 14px rgba(0, 0, 0, 0.15);
+}
+
+.botao-enviar:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.secao-faq {
+  padding-top: 25px;
+  padding-bottom: 35px;
+}
+
+.lista-faq {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+
+/* Cada pergunta */
+
+.lista-faq details {
+  width: 100%;
+
+  padding: 0;
+
+  border: 1px solid #111111;
+  border-radius: 25px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* FAQ aberto */
+
+.lista-faq details[open] {
+  background: #fffef0;
+
+  border-color: #111111;
+
+  box-shadow:
+    0 7px 18px rgba(0, 0, 0, 0.09);
+}
+
+
+/* Pergunta */
+
+.lista-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  min-height: 52px;
+
+  padding: 12px 25px;
+
+  cursor: pointer;
+
+  color: #111111;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  list-style: none;
+
+  outline: none;
+}
+
+
+/* Remove marcador padrão */
+
+.lista-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.lista-faq summary::marker {
+  display: none;
+}
+
+
+/* Símbolo do FAQ */
+
+.lista-faq summary b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  color: #111111;
+
+  font-size: 25px;
+  font-weight: 400;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* Símbolo quando aberto */
+
+.lista-faq details[open] summary b {
+  transform: rotate(45deg);
+
+  background: #fff000;
+}
+
+
+/* Resposta */
+
+.lista-faq details p {
+  margin: 0;
+
+  padding: 0 25px 22px;
+
+  color: #555555;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  white-space: normal;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.rodape-suporte {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 30px 5%;
+
+  background: #fff000;
+
+  color: #111111;
+
+  border-top: 1px solid #111111;
+}
+
+
+/* Logo do rodapé */
+
+.rodape-suporte .logo-nome {
+  display: block;
+
+  margin: 0 0 10px;
+
+  color: #111111;
+
+  font-size: 34px;
+}
+
+
+/* Texto */
+
+.rodape-suporte p {
+  margin: 0;
+
+  color: #111111;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   LINKS DO RODAPÉ
+   Caso existam no HTML
+   ========================================================= */
+
+.rodape-suporte a {
+  color: #111111;
+
+  font-size: 18px;
+
+  text-decoration: underline;
+
+  text-underline-offset: 4px;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rodape-suporte a:hover {
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .cabecalho-suporte {
+    min-height: 110px;
+
+    padding: 22px 5%;
+  }
+
+  .logo-nome {
+    font-size: 36px;
+  }
+
+  .logo-icone {
+    font-size: 32px;
+  }
+
+  .texto-cabecalho {
+    font-size: 32px;
+  }
+
+  .opcoes-suporte {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+  }
+
+  .opcao-suporte {
+    min-height: 140px;
+
+    border-radius: 30px;
+  }
+
+  .mensagem-orientacao {
+    width: 90%;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* Header */
+
+  .cabecalho-suporte {
+    min-height: 82px;
+
+    padding: 17px 6%;
+  }
+
+  .marca {
+    gap: 8px;
+  }
+
+  .logo-nome {
+    font-size: 29px;
+  }
+
+  .logo-icone {
+    font-size: 27px;
+  }
+
+  .texto-cabecalho {
+    margin-right: 0;
+
+    font-size: 26px;
+  }
+
+
+  /* Introdução */
+
+  .introducao {
+    padding: 30px 6% 20px;
+
+    text-align: left;
+  }
+
+  .introducao h1 {
+    font-size: 37px;
+
+    letter-spacing: -1px;
+  }
+
+  .descricao {
+    font-size: 15px;
+
+    line-height: 1.5;
+  }
+
+
+  /* Seções */
+
+  .secao-ajuda,
+  .secao-formulario,
+  .secao-faq {
+    padding: 22px 6%;
+  }
+
+
+  /* Títulos */
+
+  .titulo-secao {
+    margin-bottom: 18px;
+  }
+
+  .titulo-secao h2 {
+    font-size: 26px;
+  }
+
+
+  /* Cards */
+
+  .opcoes-suporte {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .opcao-suporte {
+    min-height: 120px;
+
+    padding: 20px;
+
+    border-radius: 28px;
+  }
+
+  .icone-opcao {
+    min-width: 43px;
+    width: 43px;
+    height: 43px;
+
+    font-size: 18px;
+  }
+
+  .conteudo-opcao strong {
+    font-size: 17px;
+  }
+
+  .conteudo-opcao small {
+    font-size: 13px;
+  }
+
+
+  /* Outros assuntos */
+
+  .mensagem-orientacao {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px 17px;
+
+    border-radius: 30px;
+  }
+
+  .icone-mensagem {
+    min-width: 45px;
+    width: 45px;
+    height: 34px;
+  }
+
+
+  /* Formulário */
+
+  .formulario-suporte {
+    padding: 20px;
+
+    border-radius: 18px;
+  }
+
+  .campo-formulario input,
+  .campo-formulario textarea {
+    font-size: 14px;
+  }
+
+  .botao-enviar {
+    width: 100%;
+  }
+
+
+  /* FAQ */
+
+  .lista-faq {
+    gap: 10px;
+  }
+
+  .lista-faq details {
+    border-radius: 20px;
+  }
+
+  .lista-faq summary {
+    min-height: 55px;
+
+    padding: 12px 18px;
+
+    font-size: 16px;
+  }
+
+  .lista-faq summary b {
+    width: 27px;
+    height: 27px;
+
+    font-size: 22px;
+  }
+
+  .lista-faq details p {
+    padding: 0 18px 20px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  /* Rodapé */
+
+  .rodape-suporte {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-top: 15px;
+
+    padding: 28px 6%;
+  }
+
+  .rodape-suporte .logo-nome {
+    font-size: 30px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .logo-nome {
+    font-size: 25px;
+  }
+
+  .logo-icone {
+    font-size: 24px;
+  }
+
+  .texto-cabecalho {
+    font-size: 22px;
+  }
+
+  .introducao h1 {
+    font-size: 32px;
+  }
+
+  .opcao-suporte {
+    padding: 17px;
+  }
+
+  .mensagem-orientacao {
+    gap: 10px;
+  }
+
+  .lista-faq summary {
+    font-size: 15px;
+  }
+}

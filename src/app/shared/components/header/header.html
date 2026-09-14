@@ -1,0 +1,34 @@
+<header class="header">
+  <a routerLink="/" class="logo-link" (click)="fecharMenu()">
+    <span class="logo-texto">Buzinô</span>
+  </a>
+
+  <div class="header-right">
+    <nav class="nav">
+      <!-- Link estilizado como botão destacado -->
+      <a routerLink="/suporte" routerLinkActive="ativo" class="btn-suporte"> Suporte </a>
+    </nav>
+
+    <!-- Contêiner do Perfil e Dropdown -->
+    <div class="perfil-container">
+      <button type="button" class="btn-avatar" (click)="toggleMenu()" aria-label="Menu do usuário">
+        <img
+          src="https://imgs.search.brave.com/CXgUN3pIn_QZaNeOeLXXxlRhrBWlPqSpGqw4NH6ZeHc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL3ByZW1p/dW0vcG5nLTI1Ni10/aHVtYi9wZXJmaWwt/ZGUtdXN1YXJpby1p/Y29uLXN2Zy1kb3du/bG9hZC1wbmctMzE2/NTYxNi5wbmc_Zj13/ZWJwJnc9MTI4"
+          alt="Foto de Perfil"
+        />
+      </button>
+
+      <!-- Menu Popover / Dropdown -->
+      @if (menuAberto) {
+        <div class="dropdown-menu">
+          <a routerLink="/dashboard" (click)="fecharMenu()" class="dropdown-item"> Meus dados </a>
+          <a routerLink="/minhas-caronas" (click)="fecharMenu()" class="dropdown-item">
+            Minhas caronas
+          </a>
+          <hr class="dropdown-divider" />
+          <button type="button" (click)="logout()" class="dropdown-item item-sair">Sair</button>
+        </div>
+      }
+    </div>
+  </div>
+</header>

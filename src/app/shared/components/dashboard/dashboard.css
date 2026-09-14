@@ -1,0 +1,26 @@
+/* Container principal da dashboard */
+.dashboard-container {
+  max-width: 1000px;         /* Limita a largura para melhor leitura */
+  margin: 60px auto 100px;   /* 60px de distância do header e 100px do footer */
+  padding: 0 40px;           /* Alinhamento lateral com as margens da tela */
+}
+
+/* Título "Meus dados" no canto esquerdo com mais espaço inferior */
+.page-title {
+  font-size: 1.80rem;
+  color: #070707;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-align: left;          /* Alinha o título à esquerda */
+  margin-bottom: 40px;       /* Aumenta o espaço entre o título e os blocos */
+}
+
+/* Blocos de informação com espaçamento ampliado entre si */
+.item-text {
+  background-color: #f9f9f9;
+  padding: 20px 24px;
+  margin-bottom: 24px;       /* Aumenta o gap entre cada bloco de informação */
+  border-radius: 12px;       /* Opcional: arredonda as bordas dos cards */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}

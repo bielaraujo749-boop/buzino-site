@@ -1,0 +1,28 @@
+<form [formGroup]="buscaForm" (ngSubmit)="onSubmit()" class="formsprocura">
+  <div class="form-body">
+    <div class="field-group">
+      <input
+        id="partida"
+        type="text"
+        formControlName="partida"
+        placeholder="Cidade de origem"
+        class="input-carona"
+      />
+    </div>
+
+    <div class="field-group">
+      <input
+        id="chegada"
+        type="text"
+        formControlName="chegada"
+        placeholder="Cidade de destino"
+        class="input-carona"
+      />
+    </div>
+  </div>
+
+  <button type="submit" class="btn-procurar" [disabled]="buscaForm.invalid">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span> Buscar</span>
+  </button>
+</form>
