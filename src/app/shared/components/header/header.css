@@ -3,13 +3,14 @@
   width: 100%;
   position: sticky;
   top: 0;
+  left: 0;
   z-index: 1000;
 }
 
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 12px;           /* Espaçamento entre o texto e a imagem */
+  gap: 12px; /* Espaçamento entre o texto e a imagem */
   text-decoration: none;
   cursor: pointer;
 }
@@ -21,9 +22,9 @@
 }
 
 .imagem {
-  width: 120px;      
-  height: auto;        
-  display: block;  
+  width: 120px;
+  height: auto;
+  display: block;
 }
 
 .header {
@@ -33,12 +34,35 @@
   padding: 16px 40px;
   background-color: #fff200;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header-right {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Ajuste este valor para aumentar ou diminuir a distância entre os botões */
+}
+
+/* Novo estilo para o Inicio */
+.btn-home {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
 }
 
 /* Novo estilo para o Botão Suporte */
@@ -85,8 +109,8 @@
 }
 
 .btn-avatar img {
-  width: 22px;
-  height: 22px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
 }
 

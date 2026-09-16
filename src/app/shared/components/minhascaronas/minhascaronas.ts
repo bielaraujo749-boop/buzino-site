@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { OpcoesService } from '../../../core/services/opcoes.service';
 import { Cardcaronas } from '../cardcaronas/cardcaronas';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [Cardcaronas],
+  imports: [Cardcaronas, RouterLink],
   standalone: true,
   selector: 'app-minhascaronas',
   styleUrl: './minhascaronas.css',
