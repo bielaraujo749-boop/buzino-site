@@ -20,3 +20,10 @@ export interface ProcurarViagem { //será usado apenas no procurador de caronas
     chegada: string;
     data: string;
 }
+export interface Usuario {
+  id: number;
+  nome: string;
+  email: string;
+  senha: string;
+  idade: number;
+}

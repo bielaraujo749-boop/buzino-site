@@ -85,6 +85,11 @@
   Esqueceu sua senha?
     </button>
       
+  @if (erroLogin) {
+    <span class="erro">
+      {{ erroLogin }}
+    </span>
+  }
 
       <!-- BOTÃO LOGIN -->
       <button
@@ -105,6 +110,7 @@
 
       <a
         routerLink="/cadastro"
+        (click)="fecharLogin()"
         class="btn-cadastro"
       >
         Cadastre-se

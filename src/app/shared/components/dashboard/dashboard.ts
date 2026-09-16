@@ -1,4 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { AuthService } from '../../../core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,22 +11,26 @@ import { Component, signal } from '@angular/core';
 })
 export class Dashboard {
 
-  nome = signal('Matheus Carvalho');
+   private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
 
-  email = signal('matheuscarvalho28@gmail.com');
+  usuario = this.authService.getUsuarioAtual();
 
-  funcao = signal('Passageiro');
+  idioma = 'Português';
 
-  idioma = signal('Português');
+  sair(): void {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
+
+   voltarHome(): void {
+    this.router.navigate(['/']);
+  }
 
   menuSelecionado = signal('Perfil');
 
   selecionarMenu(menu: string): void {
     this.menuSelecionado.set(menu);
-  }
-
-  sair(): void {
-    console.log('Usuário saiu da conta');
   }
 
 }

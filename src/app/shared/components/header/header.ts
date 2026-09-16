@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,18 @@ import { RouterModule, Router } from '@angular/router';
   styleUrl: './header.css'
 })
 export class Header {
+
+  private readonly authService = inject(AuthService);
+
+  @Output() abrirLogin = new EventEmitter<void>();
+
+  estaAutenticado(): boolean {
+  return this.authService.estaAutenticado();
+}
+
+abrirLoginModal(): void {
+   this.authService.abrirLogin();
+}
   
   menuAberto: boolean = false;
 
@@ -24,8 +37,10 @@ export class Header {
   }
 
   logout(): void {
-    this.fecharMenu();
-    // Adicione aqui a lógica de autenticação se houver (ex: limpar token)
-    this.router.navigate(['/login']);
+      this.authService.logout();
+
+      this.fecharMenu();
+
+      this.router.navigate(['/']);
   }
 }

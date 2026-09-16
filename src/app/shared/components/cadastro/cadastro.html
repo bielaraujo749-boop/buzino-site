@@ -28,7 +28,7 @@
 
     <form
       [formGroup]="cadastroForm"
-      (ngSubmit)="criarConta()"
+      (ngSubmit)="cadastrar()"
       class="cadastro-form"
     >
 
@@ -113,7 +113,14 @@
             Você precisa ter 18 anos ou mais para se cadastrar.
           </span>
         }
-
+        @if (
+          idade.touched &&
+          idade.hasError('max')
+        ) {
+          <span class="erro">
+            Você precisa ter no máximo 120 anos para se cadastrar.
+          </span>
+        }
       </div>
 
 
