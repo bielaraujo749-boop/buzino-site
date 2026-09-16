@@ -1,5 +1,5 @@
-
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -8,7 +8,7 @@ html, body {
 .porque,
 .como-funciona,
 .avaliacoes {
-  margin-bottom: 80px; 
+  margin-bottom: 80px;
 }
 
 :host {
@@ -16,7 +16,7 @@ html, body {
   min-height: 100vh;
 }
 
-.template{
+.template {
   width: 1000px;
 }
 
@@ -48,15 +48,19 @@ html, body {
 }
 
 .btn-entra {
-    display: inline-block;
-    width: fit-content;
-    background-color: #111111;
-    color:#f9f9f8;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 16px 40px;
-    border-radius: 30px;
+  display: inline-block;
+  width: fit-content;
+  background-color: #111111;
+  color: #f9f9f8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 16px 40px;
+  border-radius: 30px;
+}
+
+.btn-entra:hover {
+  transform: translateY(-1px);
 }
 
 .hero-image {
@@ -67,12 +71,21 @@ html, body {
 }
 
 .hero-image img {
-  width: 100%;
-  max-width: 596px;    
-  height: 546px;       
-  object-fit: cover;   
-  border-radius: 24px; 
+  width: 90%;
+  max-width: 596px;
+  height: 546px;
+  object-fit: cover;
+  border-radius: 24px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  mask-image:
+    linear-gradient(to right, transparent, black 2%, black 98%, transparent),
+    linear-gradient(to bottom, transparent, black 2%, black 98%, transparent);
+  mask-composite: intersect;
+
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, black 2%, black 98%, transparent),
+    linear-gradient(to bottom, transparent, black 2%, black 98%, transparent);
+  -webkit-mask-composite: source-in;
 }
 
 .avatar {
@@ -91,28 +104,28 @@ html, body {
 }
 
 .porque {
-    text-align: center;
-    padding: 60px 40px;
+  text-align: center;
+  padding: 60px 40px;
 }
 
 .porque h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
 .cards {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px;
 }
 
 .card {
-    flex: 1;
-    background-color: #ffffff;
-    border: 1px solid #010101;
-    border-radius: 16px;
-    padding: 32px 24px;
-    text-align: center;
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #010101;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
 }
 
 .card img {
@@ -171,7 +184,7 @@ html, body {
 }
 
 .passo:not(:last-child) .numero::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   left: 100%;
@@ -192,10 +205,9 @@ html, body {
   line-height: 1.4;
 }
 
-.porque, .como-funciona {
- 
-background-color: #ffffff;
-
+.porque,
+.como-funciona {
+  background-color: #ffffff;
 }
 
 .avaliacoes {
@@ -274,18 +286,18 @@ background-color: #ffffff;
 }
 
 @media (max-width: 600px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 32px;
-        padding: 40px 24px;
-    }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+    padding: 40px 24px;
+  }
 
-    .hero-text {
-        align-items: center;
-    }
+  .hero-text {
+    align-items: center;
+  }
 
-    .hero-text h1 {
-        font-size: 56px;
-    }
+  .hero-text h1 {
+    font-size: 56px;
+  }
 }
