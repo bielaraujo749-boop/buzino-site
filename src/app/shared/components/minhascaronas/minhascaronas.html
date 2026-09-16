@@ -1,13 +1,14 @@
 <section class="conteiner-minhas-caronas">
-    <h2 style="text-align: left; font-family: poppins, sans-serif" class="titulo"> Caronas </h2>
-    <div class="lista">
-        @for (opcoes of opcoesService.minhasCaronas(); track opcoes.id) {
-            <app-cardcaronas
-              [opcoes]="opcoes"
-              [modoVisualizacao]="true">
-            </app-cardcaronas>
-        } @empty {
-            <p style="text-align: left; font-family: poppins, sans-serif;" >Você ainda não possui nenhuma carona.</p>
-        }
-    </div>
+  <h2 style="text-align: left; font-family: poppins, sans-serif" class="titulo">Caronas</h2>
+  <div class="lista">
+    @for (opcoes of opcoesService.minhasCaronas(); track opcoes.id) {
+      <app-cardcaronas [opcoes]="opcoes" [modoVisualizacao]="true"> </app-cardcaronas>
+    } @empty {
+      <div style="text-align: left; font-family: poppins, sans-serif">
+        <p style="text-align: left">Você ainda não possui nenhuma carona.</p>
+
+        <a routerLink="/pageprocura" class="btn-procura"> Procurar caronas </a>
+      </div>
+    }
+  </div>
 </section>
