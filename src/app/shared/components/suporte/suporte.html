@@ -1,29 +1,21 @@
 <main class="pagina-suporte">
-
   <section class="introducao">
-
     <h1>Como podemos <span>ajudar?</span></h1>
 
     <p class="descricao">
-      Estamos aqui para ajudar em cada etapa da sua viagem.
-      Escolha uma opção abaixo para encontrar orientação.
+      Estamos aqui para ajudar em cada etapa da sua viagem. Escolha uma opção abaixo para encontrar
+      orientação.
     </p>
   </section>
 
   <section class="secao-ajuda">
-
     <div class="titulo-secao">
       <h2>Encontre ajuda</h2>
       <p>Selecione o assunto que precisa de ajuda.</p>
     </div>
 
     <div class="opcoes-suporte">
-
-      <button
-        type="button"
-        class="opcao-suporte"
-        (click)="problemasSite()"
-      >
+      <button type="button" class="opcao-suporte" (click)="problemasSite()">
         <span class="icone-opcao">!</span>
 
         <span class="conteudo-opcao">
@@ -32,11 +24,7 @@
         </span>
       </button>
 
-      <button
-        type="button"
-        class="opcao-suporte"
-        (click)="minhaConta()"
-      >
+      <button type="button" class="opcao-suporte" (click)="minhaConta()">
         <span class="icone-opcao">◎</span>
 
         <span class="conteudo-opcao">
@@ -45,11 +33,7 @@
         </span>
       </button>
 
-      <button
-        type="button"
-        class="opcao-suporte"
-        (click)="minhaCarona()"
-      >
+      <button type="button" class="opcao-suporte" (click)="minhaCarona()">
         <span class="icone-opcao">🚗</span>
 
         <span class="conteudo-opcao">
@@ -58,11 +42,7 @@
         </span>
       </button>
 
-      <button
-        type="button"
-        class="opcao-suporte"
-        (click)="suporteTecnico()"
-      >
+      <button type="button" class="opcao-suporte" (click)="suporteTecnico()">
         <span class="icone-opcao">⚙</span>
 
         <span class="conteudo-opcao">
@@ -71,11 +51,7 @@
         </span>
       </button>
 
-      <button
-        type="button"
-        class="opcao-suporte"
-        (click)="abrirWhatsapp()"
-      >
+      <button type="button" class="opcao-suporte" (click)="abrirWhatsapp()">
         <span class="icone-opcao">•••</span>
 
         <span class="conteudo-opcao">
@@ -83,80 +59,50 @@
           <small>Fale diretamente com nossa equipe pelo WhatsApp.</small>
         </span>
       </button>
-
     </div>
 
     @if (mensagemOrientacao) {
       <div class="mensagem-orientacao">
-
         <div class="icone-mensagem">i</div>
 
         <div>
           <strong>Orientação</strong>
           <p>{{ mensagemOrientacao }}</p>
         </div>
-
       </div>
     }
-
   </section>
 
   <section class="secao-formulario">
-
     <div class="titulo-secao">
-      <p class="mini-titulo">FALE CONOSCO</p>
-
       <h2>Fale com o suporte</h2>
 
-      <p>
-        Conte para nossa equipe o que aconteceu e vamos ajudar você.
-      </p>
+      <p>Conte para nossa equipe o que aconteceu e vamos ajudar você.</p>
     </div>
 
-    <div class="formulario-suporte">
-
+    <form class="formulario-suporte" (submit)="abrirWhatsapp()">
       <div class="campo-formulario">
-        <input
-          type="text"
-          placeholder="Nome"
-        />
+        <input type="text" placeholder="Nome" required />
       </div>
 
       <div class="campo-formulario">
-        <input
-          type="email"
-          placeholder="E-mail"
-        />
+        <input type="email" placeholder="E-mail" required />
       </div>
 
       <div class="campo-formulario campo-mensagem">
-        <textarea
-          placeholder="Como podemos te ajudar?"
-          rows="7"
-        ></textarea>
+        <textarea placeholder="Como podemos te ajudar?" required rows="7"></textarea>
       </div>
 
-      <button
-        type="button"
-        class="botao-enviar"
-        (click)="abrirWhatsapp()"
-      >
-        Enviar mensagem
-      </button>
-
-    </div>
-
+      <button type="submit" class="botao-enviar">Enviar mensagem</button>
+    </form>
   </section>
 
   <section class="secao-faq">
-
     <div class="titulo-secao">
-
       <h2>Perguntas frequentes</h2>
     </div>
 
     <div class="lista-faq">
-
       <details>
         <summary>
           <span>Estou enfrentando problemas ao utilizar o site. O que devo fazer?</span>
@@ -164,7 +110,9 @@
         </summary>
 
         <p>
-          Atualize a página, limpe o cache do navegador e verifique sua conexão com a internet. Caso o problema continue ocorrendo, entre em contato com nossa equipe de suporte informando o erro encontrado.
+          Atualize a página, limpe o cache do navegador e verifique sua conexão com a internet. Caso
+          o problema continue ocorrendo, entre em contato com nossa equipe de suporte informando o
+          erro encontrado.
         </p>
       </details>
 
@@ -175,7 +123,8 @@
         </summary>
 
         <p>
-          Verifique se o e-mail e a senha informados estão corretos. Caso não consiga acessar sua conta ou recuperar seus dados, nossa equipe poderá auxiliar no processo de verificação.
+          Verifique se o e-mail e a senha informados estão corretos. Caso não consiga acessar sua
+          conta ou recuperar seus dados, nossa equipe poderá auxiliar no processo de verificação.
         </p>
       </details>
 
@@ -186,18 +135,24 @@
         </summary>
 
         <p>
-           Confira as informações da viagem, horário e local de embarque. Se identificar alguma inconsistência ou precisar de suporte adicional, entre em contato com nossa equipe.
+          Confira as informações da viagem, horário e local de embarque. Se identificar alguma
+          inconsistência ou precisar de suporte adicional, entre em contato com nossa equipe.
         </p>
       </details>
 
       <details>
         <summary>
-          <span>Identifiquei um erro ou comportamento inesperado no sistema. Como posso informar a equipe?</span>
+          <span
+            >Identifiquei um erro ou comportamento inesperado no sistema. Como posso informar a
+            equipe?</span
+          >
           <b>+</b>
         </summary>
 
         <p>
-         Utilize o formulário de contato ou o WhatsApp para informar o erro encontrado. Se possível, descreva o que aconteceu e em qual página o problema ocorreu para agilizar o atendimento.
+          Utilize o formulário de contato ou o WhatsApp para informar o erro encontrado. Se
+          possível, descreva o que aconteceu e em qual página o problema ocorreu para agilizar o
+          atendimento.
         </p>
       </details>
 
@@ -208,14 +163,11 @@
         </summary>
 
         <p>
-        Você pode entrar em contato pelo formulário disponível nesta página ou diretamente pelo WhatsApp. Nossa equipe está preparada para esclarecer dúvidas e oferecer suporte quando necessário.
+          Você pode entrar em contato pelo formulário disponível nesta página ou diretamente pelo
+          WhatsApp. Nossa equipe está preparada para esclarecer dúvidas e oferecer suporte quando
+          necessário.
         </p>
       </details>
-
     </div>
-
   </section>
-
-
-
 </main>
