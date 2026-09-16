@@ -1,41 +1,44 @@
 <main class="dashboard-container">
   <h1 class="page-title">Meus dados</h1>
 
-  <div class="item-text">
-    <strong> Nome: </strong>
-    <br /><br />
-    <span> {{ nome() }}</span>
-  </div>
+   @if (usuario) {
 
-  <div class="item-text">
-    <strong> E-mail </strong>
-    <br /><br />
-    <span> {{ email() }} </span>
-  </div>
-
-  <div class="item-text">
-    <strong> Idade </strong>
-    <br /><br />
-    <span> 28 anos </span>
-  </div>
-
-  <div class="item-text">
-    <strong> Idioma </strong>
-    <br /><br />
-    <span> {{ idioma() }} </span>
-  </div>
-
-  <div class="item-text">
-    <strong> Endereço </strong>
-    <br /><br />
-    <span> Tijuca, Rio de Janeiro - RJ </span>
-  </div>
-
-  <div class="personal-item">
     <div class="item-text">
-      <strong> Senha </strong>
+      <strong>Nome:</strong>
       <br /><br />
-      <span> Última alteração: 9 de Setembro. </span>
+      <span>{{ usuario.nome }}</span>
     </div>
+
+    <div class="item-text">
+      <strong>E-mail:</strong>
+      <br /><br />
+      <span>{{ usuario.email }}</span>
+    </div>
+
+    <div class="item-text">
+      <strong>Idade:</strong>
+      <br /><br />
+      <span>{{ usuario.idade }} anos</span>
+    </div>
+
+    <div class="item-text">
+      <strong>Idioma:</strong>
+      <br /><br />
+      <span>{{ idioma }}</span>
+    </div>
+    <div class="item-text">
+    <strong> Endereço: </strong>
+    <br /><br />
+    <span> Adicione seu endereço </span>
   </div>
+  }
+
+  <div class="btn-sair">
+    <button (click)="sair()">Sair da conta</button>
+  </div>
+
+  <div class="btn-voltar">
+    <button (click)="voltarHome()">Voltar</button>
+  </div>
+
 </main>

@@ -7,6 +7,7 @@ import {
   Validators
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -21,7 +22,9 @@ export class Cadastro {
 
   private readonly fb = inject(FormBuilder);
   private readonly router = inject(Router);
+  private readonly authService = inject(AuthService);
 
+  erroCadastro = '';
 
   cadastroForm = this.fb.nonNullable.group({
 
@@ -31,9 +34,10 @@ export class Cadastro {
       Validators.maxLength(50)
     ]],
 
-    idade: [null as number | null, [
+    idade: [0, [
       Validators.required,
-      Validators.min(18)
+      Validators.min(18),
+      Validators.max(120)
     ]],
 
     email: ['', [
@@ -84,37 +88,36 @@ export class Cadastro {
    * Executado quando o usuário tenta
    * criar a conta.
    */
-  criarConta(): void {
 
-    if (this.cadastroForm.invalid) {
+  cadastrar(): void {
 
-      this.cadastroForm.markAllAsTouched();
-
-      return;
-    }
-
-
-    const dadosCadastro = this.cadastroForm.getRawValue();
-
-
-    console.log('Dados do cadastro:', dadosCadastro);
-
-
-    /*
-     * FUTURAMENTE:
-     *
-     * 1. Enviar os dados para a API.
-     *
-     * 2. Criar/autenticar o usuário.
-     *
-     * 3. Redirecionar para a tela de opções ou para a a Dashboard.
-     */
-
-
-    // Temporariamente não navegamos para
-    // nenhuma página que ainda não existe.
+  if (this.cadastroForm.invalid) {
+    this.cadastroForm.markAllAsTouched();
+    return;
   }
 
+  const dados = this.cadastroForm.getRawValue();
+
+  console.log('Dados do cadastro:', dados);
+
+  const sucesso = this.authService.cadastrar({
+    nome: dados.nomeCompleto,
+    email: dados.email,
+    senha: dados.senha,
+    idade: dados.idade
+  });
+
+  if (!sucesso) {
+    this.erroCadastro = 'Este e-mail já está cadastrado.';
+    return;
+  }
+
+  this.erroCadastro = '';
+
+  this.router.navigate(['/']).then(() => {
+  this.authService.abrirLogin();
+});
+}
   
   fecharCadastro(): void {
     this.router.navigate(['/']);

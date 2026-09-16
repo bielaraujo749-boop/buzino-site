@@ -4,12 +4,26 @@
   </a>
 
   <div class="header-right">
-    <nav class="nav">
+
+     <nav class="nav">
       <!-- Link estilizado como botão destacado -->
       <a routerLink="/suporte" routerLinkActive="ativo" class="btn-suporte"> Suporte </a>
-    </nav>
+    </nav> 
 
-    <!-- Contêiner do Perfil e Dropdown -->
+    @if (!estaAutenticado()) {
+
+  <button
+    type="button"
+    class="btn-login"
+    (click)="abrirLoginModal()"
+  >
+    Login
+  </button>
+}
+
+    @if (estaAutenticado()) {
+  
+  <!-- Contêiner do Perfil e Dropdown -->
     <div class="perfil-container">
       <button type="button" class="btn-avatar" (click)="toggleMenu()" aria-label="Menu do usuário">
         <img
@@ -30,5 +44,6 @@
         </div>
       }
     </div>
+}
   </div>
 </header>

@@ -6,7 +6,9 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
+
 import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +25,9 @@ export class Login {
 
   private readonly fb = inject(FormBuilder);
   private readonly router = inject(Router);
+  private readonly authService = inject(AuthService);
+
+   erroLogin = '';
 
   @Output() fechar = new EventEmitter<void>();
 
@@ -39,6 +44,54 @@ export class Login {
 
   logar(): void {
 
+  if (this.loginForm.invalid) {
+    this.loginForm.markAllAsTouched();
+    return;
+  }
+
+  const { email, senha } = this.loginForm.getRawValue();
+
+  const sucesso = this.authService.login(email, senha);
+
+  if (!sucesso) {
+     this.erroLogin = 'E-mail ou senha incorretos.';
+    return;
+  }
+
+   this.erroLogin = '';
+
+  this.fecharLogin();
+
+  this.router.navigate(['/dashboard']);
+}
+
+ fecharLogin(): void {
+    this.fechar.emit();
+  }
+
+  get email() {
+    return this.loginForm.controls.email;
+  }
+
+  get senha() {
+    return this.loginForm.controls.senha;
+  }
+
+  
+  recuperacaoAberta = false;
+
+
+  abrirRecuperacao(): void {
+    this.recuperacaoAberta = true;
+  }
+
+
+  fecharRecuperacao(): void {
+    this.recuperacaoAberta = false;
+  } 
+
+  /*logar(): void {
+
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
@@ -48,15 +101,6 @@ export class Login {
     const dadosLogin = this.loginForm.getRawValue();
 
     console.log('Dados de login:', dadosLogin);
-
-    /*
-     * FUTURAMENTE:
-     * aqui faremos a autenticação real.
-     *
-     * Por enquanto, vamos apenas encaminhar
-     * para a futura página após o login.
-     */
-
     this.router.navigate(['/dashboard']);
   }
 
@@ -83,6 +127,7 @@ export class Login {
 
   fecharRecuperacao(): void {
     this.recuperacaoAberta = false;
-  }
+  } 
+    */
 
 }
