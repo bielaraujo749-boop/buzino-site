@@ -7,11 +7,10 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  styleUrl: './dashboard.css',
 })
 export class Dashboard {
-
-   private readonly authService = inject(AuthService);
+  private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
 
   usuario = this.authService.getUsuarioAtual();
@@ -23,7 +22,7 @@ export class Dashboard {
     this.router.navigate(['/']);
   }
 
-   voltarHome(): void {
+  voltarHome(): void {
     this.router.navigate(['/']);
   }
 
@@ -32,5 +31,4 @@ export class Dashboard {
   selecionarMenu(menu: string): void {
     this.menuSelecionado.set(menu);
   }
-
 }

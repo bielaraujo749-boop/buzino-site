@@ -1,8 +1,8 @@
 /* Container principal da dashboard */
 .dashboard-container {
-  max-width: 1000px;
-  margin: 60px auto 100px;
-  padding: 0 40px;
+  max-width: 1000px; /* Limita a largura para melhor leitura */
+  margin: 60px auto 100px; /* 60px de distância do header e 100px do footer */
+  padding: 0 40px; /* Alinhamento lateral com as margens da tela */
 }
 
 /* Título "Meus dados" no canto esquerdo com mais espaço inferior */
@@ -18,19 +18,41 @@
 /* Blocos de informação com espaçamento ampliado entre si */
 .item-text {
   background-color: white;
-  border: 1px solid white;
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease;
-  box-shadow: 0.2 ease;
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  padding: 20px 24px;
+  margin-bottom: 24px; /* Aumenta o gap entre cada bloco de informação */
+  border-radius: 12px; /* Opcional: arredonda as bordas dos cards */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
+
 .item-text:hover {
-  transform: translateY(-3px);
-  background-color: #d4d4d4;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+
+  background: white;
+
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+}
+
+.btn-sair {
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  color: #c62828;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  transition: all 0.2s ease;
+}
+
+.btn-voltar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
 }
