@@ -1,0 +1,9 @@
+services:
+  buzino:
+    build: .
+    container_name: buzino
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+    restart: unless-stopped
